@@ -1,0 +1,377 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "203119ef-c11a-4878-9ddd-255b6d5cde38",
+   "metadata": {},
+   "source": [
+    "# import libraries"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8f8ba9a2-ae1e-4e19-8f1a-576e5db571d9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import matplotlib.pyplot as plt\n",
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3e40fcaa-d9cb-4185-a591-2be1ab1cbddf",
+   "metadata": {},
+   "source": [
+    "# importing dataset from project files"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d742e4b8-1e72-4033-a402-14bc4b663783",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "demo = pd.read_sas('data/nhanes/DEMO_J.XPT')\n",
+    "bmx = pd.read_sas('data/nhanes/BMX_J.XPT')\n",
+    "bpx = pd.read_sas('data/nhanes/BPX_J.XPT')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9f8bb832-872c-42e9-930e-f4c7ae3b1188",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Check what you've got\n",
+    "#print(demo.shape)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d61ecbe4-a14d-4fbe-9c63-e6882cb07c60",
+   "metadata": {},
+   "source": [
+    "# === STEP 3: Merge DataFrames ===\n",
+    "SEQN — unique participant ID (this is your merge key)\n",
+    "RIDAGEYR — age in years\n",
+    "RIAGENDR — gender (1=Male, 2=Female)\n",
+    "RIDRETH3 — race/ethnicity (detailed)\n",
+    "BMXBMI — BMI\n",
+    "BPXSY1 — systolic blood pressure (1st reading)\n",
+    "BPXDI1 — diastolic blood pressure (1st reading)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ef72e6c4-2b2a-4e9e-b790-d6d65a462c8c",
+   "metadata": {},
+   "source": [
+    "# Merging of data using left-merge"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "bf43ba97-bd8a-4d7c-8024-1e02834b85e6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Merge all three on participant ID\n",
+    "#\n",
+    "df = demo.merge(bmx[['SEQN', 'BMXBMI', 'BMXHT', 'BMXWT']], on='SEQN', how='left')\n",
+    "df = df.merge(bpx[['SEQN', 'BPXSY1', 'BPXDI1']], on='SEQN', how='left')\n",
+    "\n",
+    "#print(df.shape)  # should be 9254 rows but with more columns now\n",
+    "#print(df.head())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "11af0b44-c7c4-4ff7-b07b-1b4e4dce06dc",
+   "metadata": {},
+   "source": [
+    "# === STEP 4: Pandas Operations(data handling,filtering)==="
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c275dd5b-401a-420b-9b63-6d200235dc90",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 1. Filter to adults only\n",
+    "# Filtering to adults (18+) because NHANES includes children and we want health metrics comparable to ICU populations\n",
+    "adults = df[df['RIDAGEYR'] >= 18]\n",
+    "#print(adults.shape, \"after filtering to adult\")  # should be less than 9254"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9b93f873-ec00-4d19-ae86-8dd04264e92c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 2. Select specific columns\n",
+    "adults[['RIDAGEYR', 'RIAGENDR', 'BMXBMI']]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "678b9796-2b24-4b11-9121-38546fa3cb89",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 3. Average BMI by gender\n",
+    "#print(adults.groupby('RIAGENDR')['BMXBMI'].mean())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "c97c8c8a-8ad3-4c5e-9521-e0195c8d9591",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 4. Multiple stats at once\n",
+    "#print(adults.groupby('RIAGENDR')['BMXBMI'].agg(['mean', 'median', 'std']))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0c1fba59-0d21-48f2-b204-781bcbe0411f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 5. Count of each race/ethnicity category\n",
+    "#print(adults['RIDRETH3'].value_counts())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "cd3b5324-509d-4fdf-b5b8-e844216c8095",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 6. How many missing values per column\n",
+    "#print(adults.isna().sum())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "e9e312b1-38c0-470d-b8b7-20b07b455faf",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 7. Create a complete-cases subset (no missing BMI or BP)\n",
+    "complete = adults.dropna(subset=['BMXBMI', 'BPXSY1'])\n",
+    "#print(complete.shape)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "5c9d24f2-13dd-492b-aacd-adc7003cda60",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#8. Fill missing blood pressure with median\n",
+    "\n",
+    "adults['BPXSY1_filled'] = adults['BPXSY1'].fillna(adults['BPXSY1'].median())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2e69dde4-9fdd-404d-98b3-46e38e89543c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 9. Summary stats for all numeric columns\n",
+    "#print(adults.describe())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7cd9b8c8-88a4-4f9b-9222-cd832850685f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 10. Average systolic BP by age group (preview of step 7)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "abd41e64-ce58-4a8e-873b-c84edc09d02c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "adults['age_group'] = pd.cut(adults['RIDAGEYR'], bins=[18,30,45,60,75,100],\n",
+    "                              labels=['18-29','30-44','45-59','60-74','75+'])\n",
+    "#print(adults.groupby('age_group')['BPXSY1'].mean().sort_values())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "817ce4fc-9b0a-4df4-b711-58998da25a6e",
+   "metadata": {},
+   "source": [
+    "# === STEP 5: data cleaning ==="
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7fa2e87a-137e-4aa4-ba61-93d5d2617146",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# See the full missing picture\n",
+    "\n",
+    "missing = df.isna().sum().sort_values(ascending=False)\n",
+    "missing_pct = (missing / len(df) * 100).round(1)\n",
+    "print(\"====== MISSING VALUES (%) ======\")\n",
+    "print(missing_pct[missing_pct > 0])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d8522103-cb12-4cf6-a911-f5c498374c2f",
+   "metadata": {},
+   "source": [
+    "# =========Step 6: Visualisations ============== "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "49fc0032-b583-40ea-b334-26039536a3f8",
+   "metadata": {},
+   "source": [
+    "# 1. Histogram — BMI distribution\n",
+    "#distribution of BMI across the year 2017-2018\n",
+    "#Highest BMI range is in the 25-30 bin\n",
+    "#steep positive skew 30 onwards"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "0ebd046f-5186-4b41-b841-307ed38f033e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "bins = range(10, 100, 5)\n",
+    "df['BMXBMI'].hist(bins=bins, edgecolor='black')\n",
+    "plt.xlabel('BMI')\n",
+    "plt.ylabel('Count')\n",
+    "plt.title('Distribution of BMI in NHANES 2017-2018')\n",
+    "plt.xticks(bins)\n",
+    "plt.grid(bins)\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d4cad26f-a784-4d28-8592-2c501c73142d",
+   "metadata": {},
+   "source": [
+    "# 2. Bar chart — Average BMI by gender\n",
+    "#female have slightly higher mean of BMI"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1466b1fd-0a70-489b-93f1-a96616969b02",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df.groupby(adults['RIAGENDR'])['BMXBMI'].mean().plot(kind='bar')\n",
+    "plt.xticks([0, 1], ['Male', 'Female'], rotation=0)\n",
+    "plt.ylabel('Mean BMI')\n",
+    "plt.xlabel('Gender')\n",
+    "plt.title('Average BMI by Gender')\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c092ee2d-1111-4de3-bcf6-179abc217c62",
+   "metadata": {},
+   "source": [
+    "# 3. Scatter plot — Age vs Systolic BP\n",
+    "# Observation: systolic BP trends upward with age, especially after 50. Expect this to be a strong predictor."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "4a701f23-49e7-40e2-8240-9a64e14bb279",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "plt.scatter(adults['RIDAGEYR'], adults['BPXSY1'], alpha=0.1, s=5)\n",
+    "plt.xlabel('Age (years)')\n",
+    "plt.ylabel('Systolic Blood Pressure')\n",
+    "plt.title('Age vs Systolic Blood Pressure')\n",
+    "plt.xticks(range(18, 85, 5))\n",
+    "plt.show()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d703fd2e-f2a2-4a98-bf03-dc853c895410",
+   "metadata": {},
+   "source": [
+    "# =======creating bins for age groups========"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d63eb3ec-60b6-4277-b6c9-967b9ff66a31",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create age bins\n",
+    "df['age_group'] = pd.cut(adults['RIDAGEYR'], bins=[18, 30, 45, 60, 75, 100],\n",
+    "                          labels=['18-29', '30-44', '45-59', '60-74', '75+'])\n",
+    "\n",
+    "# The answer\n",
+    "df.groupby(['age_group', 'RIAGENDR'])['BMXBMI'].mean().unstack()"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.9"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
