@@ -1,0 +1,1010 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20252.25.1003.1601                               -->
+<workbook original-version='18.1' source-build='2025.2.4 (20252.25.1003.1601)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='nhanes_clean' inline='true' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='nhanes_clean' name='textscan.08qn97x0rwm9wp12yprjv0y0kzag'>
+            <connection class='textscan' directory='C:/Users/syafi/equiscreen' filename='nhanes_clean.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.08qn97x0rwm9wp12yprjv0y0kzag' name='nhanes_clean.csv' table='[nhanes_clean#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_SG' separator=','>
+            <column datatype='integer' name='age' ordinal='0' />
+            <column datatype='string' name='gender' ordinal='1' />
+            <column datatype='string' name='ethnicity' ordinal='2' />
+            <column datatype='string' name='education' ordinal='3' />
+            <column datatype='string' name='marital_status' ordinal='4' />
+            <column datatype='real' name='poverty_ratio' ordinal='5' />
+            <column datatype='real' name='bmi' ordinal='6' />
+            <column datatype='real' name='height_cm' ordinal='7' />
+            <column datatype='real' name='weight_kg' ordinal='8' />
+            <column datatype='integer' name='systolic_bp' ordinal='9' />
+            <column datatype='integer' name='diastolic_bp' ordinal='10' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_SG&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[age]</local-name>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias>age</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ethnicity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ethnicity]</local-name>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias>ethnicity</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>education</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[education]</local-name>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias>education</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>marital_status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[marital_status]</local-name>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias>marital_status</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>poverty_ratio</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[poverty_ratio]</local-name>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias>poverty_ratio</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>bmi</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[bmi]</local-name>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias>bmi</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>height_cm</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[height_cm]</local-name>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias>height_cm</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>weight_kg</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[weight_kg]</local-name>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias>weight_kg</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>systolic_bp</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[systolic_bp]</local-name>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias>systolic_bp</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>diastolic_bp</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[diastolic_bp]</local-name>
+            <parent-name>[nhanes_clean.csv]</parent-name>
+            <remote-alias>diastolic_bp</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='MAP' datatype='real' name='[Calculation_591378965157847040]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[diastolic_bp] + ([systolic_bp] - [diastolic_bp]) / 3' />
+      </column>
+      <column caption='Age groups' datatype='string' name='[Calculation_591378965159755777]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [age] &lt; 30 THEN &apos;18-29&apos;&#13;&#10;ELSEIF [age] &lt; 45 THEN &apos;30-44&apos;&#13;&#10;ELSEIF [age] &lt; 60 THEN &apos;45-59&apos;&#13;&#10;ELSEIF [age] &lt; 75 THEN &apos;60-74&apos;&#13;&#10;ELSE &apos;75+&apos;&#13;&#10;END' />
+      </column>
+      <column caption='nhanes_clean.csv' datatype='table' name='[__tableau_internal_object_id__].[nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC]' role='measure' type='quantitative' />
+      <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
+      <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
+      <column caption='Diastolic Bp' datatype='integer' name='[diastolic_bp]' role='measure' type='quantitative' />
+      <column caption='Education' datatype='string' name='[education]' role='dimension' type='nominal' />
+      <column caption='Ethnicity' datatype='string' name='[ethnicity]' role='dimension' type='nominal' />
+      <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+      <column caption='Height Cm' datatype='real' name='[height_cm]' role='measure' type='quantitative' />
+      <column caption='Marital Status' datatype='string' name='[marital_status]' role='dimension' type='nominal' />
+      <column caption='Poverty Ratio' datatype='real' name='[poverty_ratio]' role='measure' type='quantitative' />
+      <column caption='Systolic Bp' datatype='integer' name='[systolic_bp]' role='measure' type='quantitative' />
+      <column caption='Weight Kg' datatype='real' name='[weight_kg]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Singapore&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='nhanes_clean.csv' id='nhanes_clean.csv_46C62556D87B4E0ABC12518F5D43D7DC'>
+            <properties context=''>
+              <relation connection='textscan.08qn97x0rwm9wp12yprjv0y0kzag' name='nhanes_clean.csv' table='[nhanes_clean#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_SG' separator=','>
+                  <column datatype='integer' name='age' ordinal='0' />
+                  <column datatype='string' name='gender' ordinal='1' />
+                  <column datatype='string' name='ethnicity' ordinal='2' />
+                  <column datatype='string' name='education' ordinal='3' />
+                  <column datatype='string' name='marital_status' ordinal='4' />
+                  <column datatype='real' name='poverty_ratio' ordinal='5' />
+                  <column datatype='real' name='bmi' ordinal='6' />
+                  <column datatype='real' name='height_cm' ordinal='7' />
+                  <column datatype='real' name='weight_kg' ordinal='8' />
+                  <column datatype='integer' name='systolic_bp' ordinal='9' />
+                  <column datatype='integer' name='diastolic_bp' ordinal='10' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Gender vs Avg BMI</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='nhanes_clean' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pxfo7z1i18i5r0zrodl91s8s25d'>
+            <column-instance column='[bmi]' derivation='Avg' name='[avg:bmi:qk]' pivot='key' type='quantitative' />
+            <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:gender:nk]' value='398' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:bmi:qk]</rows>
+        <cols>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:gender:nk]</cols>
+      </table>
+      <simple-id uuid='{A113F49F-2DAC-4F04-8195-2D5540DB965E}' />
+    </worksheet>
+    <worksheet name='Sheet 10'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>MAP for each gender</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='nhanes_clean' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pxfo7z1i18i5r0zrodl91s8s25d'>
+            <column caption='MAP' datatype='real' name='[Calculation_591378965157847040]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[diastolic_bp] + ([systolic_bp] - [diastolic_bp]) / 3' />
+            </column>
+            <column-instance column='[Calculation_591378965157847040]' derivation='Avg' name='[avg:Calculation_591378965157847040:qk]' pivot='key' type='quantitative' />
+            <column caption='Diastolic Bp' datatype='integer' name='[diastolic_bp]' role='measure' type='quantitative' />
+            <column caption='Gender' datatype='string' name='[gender]' role='dimension' type='nominal' />
+            <column-instance column='[gender]' derivation='None' name='[none:gender:nk]' pivot='key' type='nominal' />
+            <column caption='Systolic Bp' datatype='integer' name='[systolic_bp]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:gender:nk]' value='322' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:Calculation_591378965157847040:qk]</rows>
+        <cols>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:gender:nk]</cols>
+      </table>
+      <simple-id uuid='{23DC2108-9329-4FF3-AEF8-5CDAC9919517}' />
+    </worksheet>
+    <worksheet name='Sheet 11'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='nhanes_clean' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pxfo7z1i18i5r0zrodl91s8s25d'>
+            <column-instance column='[bmi]' derivation='Avg' name='[avg:bmi:qk]' pivot='key' type='quantitative' />
+            <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
+            <column caption='Ethnicity' datatype='string' name='[ethnicity]' role='dimension' type='nominal' />
+            <column-instance column='[ethnicity]' derivation='None' name='[none:ethnicity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[bmi]' derivation='Sum' name='[sum:bmi:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:bmi:qk]' />
+              <color column='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:bmi:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:ethnicity:nk]</rows>
+        <cols>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[sum:bmi:qk]</cols>
+      </table>
+      <simple-id uuid='{9145854F-4B6B-480A-A2F3-61F6050BB863}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Ethnicity vs Avg Poverty Ratio</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='nhanes_clean' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pxfo7z1i18i5r0zrodl91s8s25d'>
+            <column-instance column='[poverty_ratio]' derivation='Avg' name='[avg:poverty_ratio:qk]' pivot='key' type='quantitative' />
+            <column caption='Ethnicity' datatype='string' name='[ethnicity]' role='dimension' type='nominal' />
+            <column-instance column='[ethnicity]' derivation='None' name='[none:ethnicity:nk]' pivot='key' type='nominal' />
+            <column caption='Poverty Ratio' datatype='real' name='[poverty_ratio]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:ethnicity:nk]' value='208' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:poverty_ratio:qk]</rows>
+        <cols>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:ethnicity:nk]</cols>
+      </table>
+      <simple-id uuid='{8836EDD5-B1AE-400C-B00F-F41451D15514}' />
+    </worksheet>
+    <worksheet name='Sheet 3'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Age vs MAP</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='nhanes_clean' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pxfo7z1i18i5r0zrodl91s8s25d'>
+            <column caption='MAP' datatype='real' name='[Calculation_591378965157847040]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[diastolic_bp] + ([systolic_bp] - [diastolic_bp]) / 3' />
+            </column>
+            <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_591378965157847040]' derivation='Avg' name='[avg:Calculation_591378965157847040:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[age]' derivation='Avg' name='[avg:age:qk]' pivot='key' type='quantitative' />
+            <column caption='Diastolic Bp' datatype='integer' name='[diastolic_bp]' role='measure' type='quantitative' />
+            <column caption='Systolic Bp' datatype='integer' name='[systolic_bp]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:Calculation_591378965157847040:qk]</rows>
+        <cols>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:age:qk]</cols>
+      </table>
+      <simple-id uuid='{68F2EE79-862D-4581-A7AB-F5AC974EB16C}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Ethnicity vs MAP</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='nhanes_clean' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pxfo7z1i18i5r0zrodl91s8s25d'>
+            <column caption='MAP' datatype='real' name='[Calculation_591378965157847040]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[diastolic_bp] + ([systolic_bp] - [diastolic_bp]) / 3' />
+            </column>
+            <column-instance column='[Calculation_591378965157847040]' derivation='Avg' name='[avg:Calculation_591378965157847040:qk]' pivot='key' type='quantitative' />
+            <column caption='Diastolic Bp' datatype='integer' name='[diastolic_bp]' role='measure' type='quantitative' />
+            <column caption='Ethnicity' datatype='string' name='[ethnicity]' role='dimension' type='nominal' />
+            <column-instance column='[ethnicity]' derivation='None' name='[none:ethnicity:nk]' pivot='key' type='nominal' />
+            <column caption='Systolic Bp' datatype='integer' name='[systolic_bp]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:ethnicity:nk]' value='168' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:Calculation_591378965157847040:qk]</rows>
+        <cols>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:ethnicity:nk]</cols>
+      </table>
+      <simple-id uuid='{B8235891-F29D-4F2C-8872-DF48167BFBA5}' />
+    </worksheet>
+    <worksheet name='Sheet 5'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Education vs poverty ratio</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='nhanes_clean' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pxfo7z1i18i5r0zrodl91s8s25d'>
+            <column-instance column='[poverty_ratio]' derivation='Avg' name='[avg:poverty_ratio:qk]' pivot='key' type='quantitative' />
+            <column caption='Education' datatype='string' name='[education]' role='dimension' type='nominal' />
+            <column-instance column='[education]' derivation='None' name='[none:education:nk]' pivot='key' type='nominal' />
+            <column caption='Poverty Ratio' datatype='real' name='[poverty_ratio]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:education:nk]' value='183' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:poverty_ratio:qk]</rows>
+        <cols>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:education:nk]</cols>
+      </table>
+      <simple-id uuid='{7A046019-9F16-4454-A227-419F14FAAA13}' />
+    </worksheet>
+    <worksheet name='Sheet 6'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Age vs BMI</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='nhanes_clean' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pxfo7z1i18i5r0zrodl91s8s25d'>
+            <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
+            <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
+            <column-instance column='[age]' derivation='Sum' name='[sum:age:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[bmi]' derivation='Sum' name='[sum:bmi:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[sum:bmi:qk]</rows>
+        <cols>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[sum:age:qk]</cols>
+      </table>
+      <simple-id uuid='{7D36D716-DC1A-4C15-96ED-5A1AFD576F6E}' />
+    </worksheet>
+    <worksheet name='Sheet 7'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Box plots of BMI for different age groups</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='nhanes_clean' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pxfo7z1i18i5r0zrodl91s8s25d'>
+            <column caption='Age groups' datatype='string' name='[Calculation_591378965159755777]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [age] &lt; 30 THEN &apos;18-29&apos;&#13;&#10;ELSEIF [age] &lt; 45 THEN &apos;30-44&apos;&#13;&#10;ELSEIF [age] &lt; 60 THEN &apos;45-59&apos;&#13;&#10;ELSEIF [age] &lt; 75 THEN &apos;60-74&apos;&#13;&#10;ELSE &apos;75+&apos;&#13;&#10;END' />
+            </column>
+            <column caption='Age' datatype='integer' name='[age]' role='measure' type='quantitative' />
+            <column-instance column='[bmi]' derivation='Avg' name='[avg:bmi:qk]' pivot='key' type='quantitative' />
+            <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_591378965159755777]' derivation='None' name='[none:Calculation_591378965159755777:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:Calculation_591378965159755777:nk]' value='170' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <reference-line axis-column='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:bmi:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:bmi:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.11994475126266479' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:bmi:qk]</rows>
+        <cols>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:Calculation_591378965159755777:nk]</cols>
+      </table>
+      <simple-id uuid='{EF95E710-8557-4123-9D0B-AC56DB84C115}' />
+    </worksheet>
+    <worksheet name='Sheet 8'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>BMI boxplot for each ethnicity</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='nhanes_clean' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pxfo7z1i18i5r0zrodl91s8s25d'>
+            <column caption='Bmi' datatype='real' name='[bmi]' role='measure' type='quantitative' />
+            <column caption='Ethnicity' datatype='string' name='[ethnicity]' role='dimension' type='nominal' />
+            <column-instance column='[ethnicity]' derivation='None' name='[none:ethnicity:nk]' pivot='key' type='nominal' />
+            <column-instance column='[bmi]' derivation='Sum' name='[sum:bmi:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:ethnicity:nk]' value='187' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <reference-line axis-column='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[sum:bmi:qk]' boxplot-mark-exclusion='false' boxplot-whisker-type='standard' enable-instant-analytics='true' formula='average' id='refline0' label-type='automatic' probability='95' scope='per-cell' symmetric='false' value-column='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[sum:bmi:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.14193369448184967' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[sum:bmi:qk]</rows>
+        <cols>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:ethnicity:nk]</cols>
+      </table>
+      <simple-id uuid='{A325FCA2-D7B6-4BBE-B4B5-6390EB0CBA56}' />
+    </worksheet>
+    <worksheet name='Sheet 9'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Height vs MAP</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='nhanes_clean' name='federated.1pxfo7z1i18i5r0zrodl91s8s25d' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pxfo7z1i18i5r0zrodl91s8s25d'>
+            <column caption='MAP' datatype='real' name='[Calculation_591378965157847040]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[diastolic_bp] + ([systolic_bp] - [diastolic_bp]) / 3' />
+            </column>
+            <column caption='Diastolic Bp' datatype='integer' name='[diastolic_bp]' role='measure' type='quantitative' />
+            <column caption='Height Cm' datatype='real' name='[height_cm]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_591378965157847040]' derivation='Sum' name='[sum:Calculation_591378965157847040:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[height_cm]' derivation='Sum' name='[sum:height_cm:qk]' pivot='key' type='quantitative' />
+            <column caption='Systolic Bp' datatype='integer' name='[systolic_bp]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='false' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[sum:height_cm:qk]' field-type='quantitative' max='206.7607858769932' min='120.0' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minheight' value='883' />
+                <format attr='maxheight' value='883' />
+                <format attr='minwidth' value='1200' />
+                <format attr='maxwidth' value='1200' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[sum:height_cm:qk]</rows>
+        <cols>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[sum:Calculation_591378965157847040:qk]</cols>
+      </table>
+      <simple-id uuid='{889F8C69-A52B-45CB-82B0-A5099207EFBF}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{655502F7-6B69-49E1-A6A6-8748560C6AAE}' />
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{79DDBBD7-CF49-4803-AF0F-CC74142B0479}' />
+    </window>
+    <window class='worksheet' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7CD0773F-C7E5-4534-B6F6-8A58FD3AFC51}' />
+    </window>
+    <window class='worksheet' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{91A214AD-72EA-4CAE-844C-31A7A7B4C525}' />
+    </window>
+    <window class='worksheet' name='Sheet 5'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{5A60F720-4169-4DAA-9C73-2EE983B65173}' />
+    </window>
+    <window class='worksheet' name='Sheet 6'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F7901337-3DA9-4A94-9B2A-684CB7618621}' />
+    </window>
+    <window class='worksheet' name='Sheet 7'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8091D42E-C3C8-4007-9117-06B6D81F8947}' />
+    </window>
+    <window class='worksheet' name='Sheet 8'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{59B1A138-5A16-4B42-B506-49330404E9FD}' />
+    </window>
+    <window class='worksheet' name='Sheet 9'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{804E1FF5-26CE-4816-B813-7512A3F41B31}' />
+    </window>
+    <window class='worksheet' name='Sheet 10'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{80BC259D-80C2-4C3D-80C8-9FCAC1902D3B}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 11'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:bmi:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:bmi:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{C8B4C4A0-D3E5-4E43-8ADC-F855A1153E25}' />
+    </window>
+  </windows>
+</workbook>
