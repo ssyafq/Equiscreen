@@ -1037,8 +1037,10 @@
       <viewpoint>
         <highlight>
           <color-one-way>
+            <field>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[avg:bmi:qk]</field>
             <field>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:Calculation_591378965159755777:nk]</field>
             <field>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:education:nk]</field>
+            <field>[federated.1pxfo7z1i18i5r0zrodl91s8s25d].[none:ethnicity:nk]</field>
           </color-one-way>
         </highlight>
       </viewpoint>
