@@ -4,8 +4,16 @@ data/
 *.pyc
 # Allow scaler file
 !scaler.pkl
+<<<<<<< HEAD
+=======
+
+>>>>>>> a326380 (Remove processed data from tracking, add .gitignore)
 data/raw/
 data/processed/
 *.XPT
 *.pkl
+<<<<<<< HEAD
 *.csv
+=======
+*.csv
+>>>>>>> a326380 (Remove processed data from tracking, add .gitignore)
