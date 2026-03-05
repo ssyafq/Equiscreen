@@ -4,3 +4,8 @@ data/
 *.pyc
 # Allow scaler file
 !scaler.pkl
+data/raw/
+data/processed/
+*.XPT
+*.pkl
+*.csv
